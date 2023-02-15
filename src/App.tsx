@@ -8,21 +8,25 @@ const App: FC = () => {
 
 	const [task, setTask] = useState<string>("");
 	const [deadline, setDeadline] = useState<number>(0);
+	const [measurement, setMeasurement] = useState<string>("");
 	const [todoList, setTodoList] = useState<ITask[]>([]);
 
-	const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+	const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>): void => {
 		if (event.target.name === 'task') {
 			setTask(event.target.value)
-		} else {
+		} else if (event.target.name === 'deadline') {
 			setDeadline(Number(event.target.value))
+		} else{
+			setMeasurement(event.target.value)
 		}
 	}
 
 	const addTask = (): void => {
-		const newTask = { taskName: task, deadline: deadline }
+		const newTask = { taskName: task, deadline: deadline, measurement: measurement }
 		setTodoList([...todoList, newTask]);
 		setTask("");
 		setDeadline(0);
+		setMeasurement("")
 	}
 
 	const completeTask = (taskNameToDelete: string): void => {
@@ -49,8 +53,22 @@ const App: FC = () => {
 						value={deadline}
 						onChange={handleChange}
 					/>
-				</div>
+					<label htmlFor = "measurement"></label>
+					<select
+						id="measurement"
+						name='measurement'
+						value={measurement}
+						onChange={handleChange}
+					>
+						<option value="">--choose--</option>
+						<option value = "g">g</option>
+						<option value="kg">kg</option>
+						<option value="item(s)">item(s)</option>
+						<option value="pack(s)">pack(s)</option>
+						</select>
+				
 				<button onClick={addTask}>Add task</button>
+				</div>
 			</div>
 			<div className='todoList'>
 				{todoList.map((task: ITask, key: number) => {
