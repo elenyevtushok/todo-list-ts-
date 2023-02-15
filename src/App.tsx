@@ -39,9 +39,10 @@ const App: FC = () => {
 		<div className="App">
 			<div className='header'>
 				<div className='inputContainer'>
+					<h2>My shopping list</h2>
 					<input
 						type="text"
-						placeholder='Task...'
+						placeholder='Product...'
 						name="task"
 						value={task}
 						onChange={handleChange}
@@ -60,14 +61,14 @@ const App: FC = () => {
 						value={measurement}
 						onChange={handleChange}
 					>
-						<option value="">--choose--</option>
+						<option value="">--measurement--</option>
 						<option value = "g">g</option>
 						<option value="kg">kg</option>
 						<option value="item(s)">item(s)</option>
 						<option value="pack(s)">pack(s)</option>
 						</select>
 				
-				<button onClick={addTask}>Add task</button>
+				<button onClick={addTask}>Add product</button>
 				</div>
 			</div>
 			<div className='todoList'>

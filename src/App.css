@@ -11,10 +11,22 @@ body {
 	margin: 0%;
 	padding: 0%;
 }
+h2{
+	color: tomato;
+	font-weight: 900;
+	background-color: rgba(135, 212, 103, 0.7);
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+	text-shadow: 1px 1px 2px grey;
+}
 
 .header {
 	flex: 30%;
-	background-color: tomato;
+	background-image: url("../public/3682012.jpg");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: cover;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -47,10 +59,14 @@ body {
 
 .header button {
 	width: 215px;
-		height: 40px;
+	height: 40px;
 	border: none;
 	border-radius: 8px;
 	cursor: pointer;
+	background-color: #87D467;
+	font-size: 18px;
+	margin-bottom: 40px;
+	margin-top: 15px;
 }
 
 .todoList {
@@ -60,6 +76,7 @@ body {
 	align-items: center;
 	padding-top: 50px;
 	flex-direction: column;
+	background-color: white;
 }
 
 .task {
@@ -93,7 +110,7 @@ body {
 	flex: 20%;
 	height: 100%;
 	border: none;
-	background-color: lightseagreen;
+	background-color: #87D467;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
 	color: white;
